@@ -60,6 +60,7 @@ def get_jobs(keywords):
             location = browser.find_element(By.XPATH, "//span[@ id='md_location']").get_attribute("textContent")
             recruiter = browser.find_element(By.XPATH, "//span[@ id='md_recruiter']").get_attribute("textContent")
             reference = browser.find_element(By.XPATH, "//span[@ id='md_ref']").get_attribute("textContent")
+            description = browser.find_element(By.XPATH, '//*[@id="md_skills"]').get_attribute("textContent")
         except (NoSuchElementException, StaleElementReferenceException):
             pass       
 
@@ -69,7 +70,8 @@ def get_jobs(keywords):
                 'Rate': rate,
                 'Location': location,
                 'Recruiter': recruiter,
-                'Reference': reference
+                'Reference': reference,
+                'Description':description
         }
                 
 
